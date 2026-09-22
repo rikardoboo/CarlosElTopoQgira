@@ -27,7 +27,7 @@ public class JumpController : MonoBehaviour
         {
             if (verticalVelocity < 0f)
             {
-                verticalVelocity = .2f;
+                verticalVelocity = -2f;
 
             }
             if (inputController.Jump)
