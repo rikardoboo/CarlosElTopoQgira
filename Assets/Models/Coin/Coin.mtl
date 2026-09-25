@@ -1,0 +1,13 @@
+# Blender 4.3.2 MTL File: 'None'
+# www.blender.org
+
+newmtl m_Coin
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd t_Coin_bc.png
+map_Ns t_Coin_r.png
+map_Bump -bm 1.000000 t_Coin_n.png
