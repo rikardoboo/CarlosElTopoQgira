@@ -10,5 +10,6 @@ public class PlayerAnimationConfiguration : ScriptableObject
     public string landAnimationName = "Land";
     public string rollAnimationName = "Roll";
     public string danceAnimationName = "Dance";
+    public string dieAnimationName = "Die";
 
 }

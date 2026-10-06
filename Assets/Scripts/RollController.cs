@@ -14,7 +14,12 @@ public class RollController : MonoBehaviour
     [SerializeField]
     private bool isRolling = false;
     [SerializeField]
+ 
+
     private GameObject rollEffectPrefab;
+
+    public bool IsRolling => isRolling;
+
     [SerializeField]
     private float effectOffsetY = 0.5f;
     

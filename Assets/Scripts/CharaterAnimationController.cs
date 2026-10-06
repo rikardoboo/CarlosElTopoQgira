@@ -24,6 +24,16 @@ public class CharacterAnimationController : MonoBehaviour
 
     private bool wasGrounded;
 
+    private bool isActive = true;
+
+   public bool IsActive { set => isActive = value; }
+
+    public void Die()
+    {
+        isActive = false;
+        PlayAnimation(animationConfiguration.dieAnimationName);
+    }
+
    public void Roll()
     {
         isRolling = true;
@@ -33,7 +43,7 @@ public class CharacterAnimationController : MonoBehaviour
     private void Update()
 
     {
-
+        if (!isActive) return;
         bool isGrounded = characterController.isGrounded;
 
         if (isRolling)
