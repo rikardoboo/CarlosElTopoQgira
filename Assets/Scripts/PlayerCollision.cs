@@ -24,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (other.CompareTag("Enemy"))
         {
-            if (TryGetComponent(out Enemy enemy))
+            if (other.TryGetComponent(out Enemy enemy))
             {
                 if (rollController.IsRolling)
                 {
@@ -36,6 +36,10 @@ public class PlayerCollision : MonoBehaviour
                     PoolManager.Instance.GetObject(enemy.HitParticles, transform.position);
                     onPlayerLose?.Invoke();
                 }
+            }
+            else
+            {
+                onPlayerLose.Invoke();
             }
         }
     }

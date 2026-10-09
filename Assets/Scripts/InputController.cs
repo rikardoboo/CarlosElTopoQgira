@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
    private void Update()
     {
-        if (isActive) return;
+        if (!isActive) return;
         Movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Jump = Input.GetKeyDown(KeyCode.Space);
         Roll = Input.GetKeyDown(KeyCode.R);
