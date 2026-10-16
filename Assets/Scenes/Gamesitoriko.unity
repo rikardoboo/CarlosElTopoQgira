@@ -792,10 +792,10 @@ MonoBehaviour:
   onLoseLife:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1279122368}
-        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
-        m_MethodName: StartBlink
-        m_Mode: 0
+      - m_Target: {fileID: 980862542}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: LoseLife
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -807,20 +807,8 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1771526420}
-        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1279122363}
-        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+      - m_Target: {fileID: 980862542}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Die
         m_Mode: 1
         m_Arguments:
@@ -831,23 +819,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1278725803}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DieSound
-          m_BoolArgument: 0
-        m_CallState: 2
   startInvincibility:
     m_PersistentCalls:
       m_Calls: []
-  invincibilityDuration: 2
-  fullInvincibilityDuration: 0
+  invincibilityLimit: 3
 --- !u!4 &197756991
 Transform:
   m_ObjectHideFlags: 0
@@ -1323,29 +1298,17 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1771526420}
-        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
+      - m_Target: {fileID: 980862542}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1279122363}
-        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &448620660
 Transform:
@@ -2324,59 +2287,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6a3be92bfc1ba40828e52a73d3b77f, type: 3}
---- !u!1 &816822107
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 816822108}
-  - component: {fileID: 816822109}
-  m_Layer: 0
-  m_Name: RollCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &816822108
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816822107}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.927, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1279122361}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &816822109
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816822107}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.99965394, y: 0.6906605, z: 1.1323135}
-  m_Center: {x: -0.00017303228, y: 0.06406546, z: 0.043325543}
 --- !u!1001 &827885558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2587,6 +2497,206 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1683738399}
   m_SourcePrefab: {fileID: 100100000, guid: 71f3a5a4e9a4f0c4e987e096c37a96e5, type: 3}
+--- !u!1 &980862541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 980862543}
+  - component: {fileID: 980862542}
+  m_Layer: 0
+  m_Name: PlayerStates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &980862542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980862541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccaddc75f28fcb4c939475f98851fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStates
+  onInitialize:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1771526420}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1279122363}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1279122365}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: ResumeMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 197756990}
+        m_TargetAssemblyTypeName: Lives, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122370}
+        m_TargetAssemblyTypeName: Invincibility, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1279122363}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1771526420}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122365}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1278725803}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DieSound
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122370}
+        m_TargetAssemblyTypeName: Invincibility, Assembly-CSharp
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DieSound
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFall:
+    m_PersistentCalls:
+      m_Calls: []
+  onLoseLife:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1279122370}
+        m_TargetAssemblyTypeName: Invincibility, Assembly-CSharp
+        m_MethodName: ActivateGhost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1278725803}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LostLifeSound
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &980862543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980862541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71787, y: 1.83154, z: 2.88223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1009125846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3268,6 +3378,8 @@ GameObject:
   - component: {fileID: 1279122366}
   - component: {fileID: 1279122367}
   - component: {fileID: 1279122368}
+  - component: {fileID: 1279122369}
+  - component: {fileID: 1279122370}
   m_Layer: 0
   m_Name: Biden
   m_TagString: Untagged
@@ -3289,7 +3401,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1158290827}
-  - {fileID: 816822108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1279122362
@@ -3421,7 +3532,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   cooldown: 0.2
-  rollCollider: {fileID: 816822109}
+  rollCollider: {fileID: 1279122369}
   rollDuration: 2
   isRolling: 0
   rollEffectPrefab: {fileID: 3096429713241293426, guid: 6af59dbe913ee764ab525616bbb9d248, type: 3}
@@ -3480,18 +3591,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1278725803}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: EnemyDieSound
-          m_BoolArgument: 0
-        m_CallState: 2
   onPlayerLose:
     m_PersistentCalls:
       m_Calls:
@@ -3521,6 +3620,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blink
   blinkInterval: 0.1
+--- !u!65 &1279122369
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279122359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4921985, y: 1.0096989, z: 1.2882898}
+  m_Center: {x: -0.01916027, y: 0.87592006, z: 0.02379644}
+--- !u!114 &1279122370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279122359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe397f5110889146ad76ddbb8bf65aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Invincibility
+  invincibilityDuration: 0
+  ghostDuration: 2
 --- !u!1 &1324639024
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,6 +5556,24 @@ MonoBehaviour:
   player: {fileID: 1279122361}
   throwForce: 10
   throwTime: 2
+  onThrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1278725803}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EnemyDieSound
+          m_BoolArgument: 0
+        m_CallState: 2
+  particlesConfig:
+    particlesPrefab: {fileID: 2027255790126770781, guid: ca5d316f81edfb64990609cd8e5c0df0, type: 3}
+    offsetParticlesY: 0.5
 --- !u!4 &2027930894
 Transform:
   m_ObjectHideFlags: 0
@@ -5583,3 +5735,4 @@ SceneRoots:
   - {fileID: 32186220}
   - {fileID: 1900999233}
   - {fileID: 197756991}
+  - {fileID: 980862543}

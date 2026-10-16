@@ -12,11 +12,12 @@ public class MovementController : MonoBehaviour
     private float movementSpeed = 5f;
     [SerializeField]
     private float rotationSpeed = 10f;
+    private bool canMove = true;
     
 
     private void Update()
     {
-        Vector2 input = inputController.Movement;
+        Vector2 input = canMove ? inputController.Movement : Vector2.zero;
         Vector3 movement = new Vector3(input.x, jumpController.VerticalVelocity, input.y);
         Vector3 movementDirection = new Vector3(input.x, 0f, input.y);
         if (movementDirection.sqrMagnitude >0)
@@ -34,6 +35,10 @@ public class MovementController : MonoBehaviour
     }
     public void StopMovement()
     {
-        characterController.Move(Vector3.zero);
+        canMove = false;
+    }
+    public void ResumeMovement()
+    {
+        canMove = true;
     }
 }
