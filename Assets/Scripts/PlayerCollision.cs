@@ -44,12 +44,25 @@ public class PlayerCollision : MonoBehaviour
                     onPlayerLose?.Invoke();
                 }
             }
-            else
+            
+        }
+        else if (other.CompareTag("Box"))
+        {
+            if (other.TryGetComponent (out Box Box))
             {
-                onPlayerLose.Invoke();
+                if (rollController.IsRolling)
+                {
+                    Box.Break();
+                }
+                else
+                {
+                    Box.CheckCharacter(transform);
+                }
             }
         }
     }
+
+
 }
 
 
