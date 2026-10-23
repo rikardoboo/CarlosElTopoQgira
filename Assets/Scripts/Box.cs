@@ -7,29 +7,19 @@ public class Box : MonoBehaviour
     [SerializeField]
     private GameObject breakParticles;
     [SerializeField]
-    private Collider zoneCollider;
-    [SerializeField]
     private string breakSoundName;
+    [SerializeField]
 
-    public void CheckCharacter(Transform character)
-    {
-        if (IsCharacterOnTop(character))
-        {
-            Break();
-        }
-    }
+    private Vector3 rewardOffset;
+
     public void Break()
     {
-        PoolManager.Instance.GetObject(rewardObject, transform.position);
+        PoolManager.Instance.GetObject(rewardObject, transform.position+rewardOffset);
         PoolManager.Instance.GetObject(breakParticles, transform.position);
         SoundManager.instance.Play(breakSoundName);
         gameObject.SetActive(false);
 
     }
-    private bool IsCharacterOnTop(Transform character)
-    {
-        Bounds zoneBounds = zoneCollider.bounds;
-        bool isAboveTop = Mathf.Abs(character.position.y - zoneBounds.max.y) < 0.1f;
-        return isAboveTop;
-    }    
+
+  
 }
