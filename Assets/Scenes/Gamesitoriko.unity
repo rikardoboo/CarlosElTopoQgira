@@ -421,8 +421,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 40, y: 1, z: 120}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 40, y: 25.151806, z: 120}
+  m_Center: {x: 0, y: -12.075903, z: 0}
 --- !u!4 &152181709
 Transform:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 152181707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.82622, y: -1.44, z: 51.4}
+  m_LocalPosition: {x: -2.82622, y: -2.3, z: 51.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1393,9 +1393,9 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980862542}
-        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
-        m_MethodName: Initialize
+      - m_Target: {fileID: 1974769411}
+        m_TargetAssemblyTypeName: CheckpointController, Assembly-CSharp
+        m_MethodName: MovePlayerToCheckpoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1417,9 +1417,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1974769411}
-        m_TargetAssemblyTypeName: CheckpointController, Assembly-CSharp
-        m_MethodName: MovePlayerToCheckpoint
+      - m_Target: {fileID: 630355317}
+        m_TargetAssemblyTypeName: Continues, Assembly-CSharp
+        m_MethodName: Initialize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1429,9 +1429,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onGameRestart:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 980862542}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Initialize
@@ -1444,9 +1441,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onGameRestart:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1974769411}
         m_TargetAssemblyTypeName: CheckpointController, Assembly-CSharp
         m_MethodName: MovePlayerToCheckpoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980862542}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Initialize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2064,6 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Continues
   continuesText: {fileID: 622857409}
+  initialContinues: 3
 --- !u!1001 &639212166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2917,6 +2930,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122364}
+        m_TargetAssemblyTypeName: JumpController, Assembly-CSharp
+        m_MethodName: set_HasGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   onDie:
     m_PersistentCalls:
@@ -3952,7 +3977,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1974769411}
         m_TargetAssemblyTypeName: CheckpointController, Assembly-CSharp
-        m_MethodName: set_CurrentCheckPoint
+        m_MethodName: set_CurrentCheckpoint
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5542,7 +5567,7 @@ Transform:
   m_GameObject: {fileID: 1855018605}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1950221, y: -0, z: -0, w: 0.9807989}
-  m_LocalPosition: {x: -2.227, y: 5.66, z: -0.43}
+  m_LocalPosition: {x: -2.227, y: 4.06, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5607,6 +5632,7 @@ MonoBehaviour:
   target: {fileID: 1279122361}
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.3
+  downLimit: 2
 --- !u!1 &1900999232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5843,7 +5869,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Fadeing
+          m_StringArgument: FadeIn
           m_BoolArgument: 0
         m_CallState: 2
   onGameOver:
@@ -5870,7 +5896,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menucitoriko
+          m_StringArgument: Lose
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1278725803}
@@ -5885,7 +5911,7 @@ MonoBehaviour:
           m_StringArgument: DieSound
           m_BoolArgument: 0
         m_CallState: 2
-  deathDelay: 1
+  deathDelay: 4
 --- !u!1001 &1926140332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6230,8 +6256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072262ca3ac95fe4f80de1518860c284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckpointController
-  startPoint: {fileID: 1279122361}
-  player: {fileID: 614794921}
+  startPoint: {fileID: 614794921}
+  player: {fileID: 1279122361}
 --- !u!4 &1974769412
 Transform:
   m_ObjectHideFlags: 0

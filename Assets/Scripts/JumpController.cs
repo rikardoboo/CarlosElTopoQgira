@@ -22,6 +22,24 @@ public class JumpController : MonoBehaviour
 
     public float VerticalVelocity => verticalVelocity;
 
+    private bool hasGravity = true;
+
+    
+
+    public bool HasGravity
+    {
+        set
+        {
+            hasGravity = value; 
+        if (!hasGravity)
+            {
+                verticalVelocity = 0f;
+            }
+        
+        
+        
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,7 +58,10 @@ public class JumpController : MonoBehaviour
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            if (hasGravity)
+            {
+                verticalVelocity += gravity * Time.deltaTime;
+            }
         }
     }
     public void Jump()

@@ -772,7 +772,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   fade: {fileID: 5572310915113265646}
-  fadeoutAnimationName: Fadeout
+  fadeoutAnimationName: FadeOut
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
