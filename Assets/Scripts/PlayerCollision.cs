@@ -6,6 +6,8 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private UnityEvent<int> onCoinsCollected;
     [SerializeField]
+    private UnityEvent onMaskCollected;
+    [SerializeField]
     private UnityEvent<Transform> onEnemyHit;
     [SerializeField]
     private UnityEvent onPlayerLose;
@@ -75,6 +77,14 @@ public class PlayerCollision : MonoBehaviour
         {
             jumpController.HasGravity = false;
             onFall?.Invoke();
+        }
+        else if (other.CompareTag("Mask"))
+        {
+            if (other.TryGetComponent(out Item item))
+            {
+                onMaskCollected?.Invoke();
+                item.Collect();
+            }
         }
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
