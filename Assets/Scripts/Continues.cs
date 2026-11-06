@@ -39,5 +39,13 @@ public class Continues : MonoBehaviour
     {
         PlayerPrefs.SetInt("ContinuesCount", count);
     }
+    public void AddContinues(int amount)
+    {
+
+        continuesCount += amount;
+        PlayerPrefs.SetInt("ContinuesCount", continuesCount);
+            UpdateContinuesText();
+
+    }
 }
 
