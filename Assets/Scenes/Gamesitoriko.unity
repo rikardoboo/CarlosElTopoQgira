@@ -1554,7 +1554,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fade: {fileID: 1334247576}
-  fadeoutAnimationName: FadeOut
+  fadeoutAnimationName: Fadeout
 --- !u!4 &456711187
 Transform:
   m_ObjectHideFlags: 0
@@ -3225,7 +3225,43 @@ MonoBehaviour:
         m_CallState: 2
   onWin:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1771526420}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122365}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1279122363}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: Dance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &980862543
 Transform:
   m_ObjectHideFlags: 0
@@ -4336,6 +4372,33 @@ MonoBehaviour:
       - m_Target: {fileID: 980862542}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Fall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLevelGemCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1909517053}
+        m_TargetAssemblyTypeName: GameOverController, Assembly-CSharp
+        m_MethodName: WinGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 980862542}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: OnWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6088,6 +6151,8 @@ MonoBehaviour:
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.3
   downLimit: 2
+  lookAheadDistance: 1.2
+  lookAheadSmoothTime: 0.45
 --- !u!1 &1900999232
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,8 +6433,20 @@ MonoBehaviour:
         m_CallState: 2
   OnWinGame:
     m_PersistentCalls:
-      m_Calls: []
-  winDelay: 0
+      m_Calls:
+      - m_Target: {fileID: 456711186}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GoToSceneWithFade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menucitoriko
+          m_BoolArgument: 0
+        m_CallState: 2
+  winDelay: 4
   deathDelay: 4
 --- !u!1001 &1926140332
 PrefabInstance:

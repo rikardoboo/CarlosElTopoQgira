@@ -10,7 +10,7 @@ public class SceneController : MonoBehaviour
     [SerializeField]
     private Animator fade;
     [SerializeField]
-    private string fadeoutAnimationName = "FadeOut";
+    private string fadeoutAnimationName = "Fadeout";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
