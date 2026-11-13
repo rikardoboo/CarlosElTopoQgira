@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemParticle: {fileID: 691778649695584979, guid: bc25f4a969198ce4f970bddab33ce21d, type: 3}
-  itemSoundName: MascaraSound
+  itemSoundName: WinSound
 --- !u!1001 &6105987538194010158
 PrefabInstance:
   m_ObjectHideFlags: 0

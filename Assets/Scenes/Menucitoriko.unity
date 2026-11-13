@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.78, y: 1.206, z: 1.385}
+  m_LocalPosition: {x: 4.35, y: 14.68, z: -8.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1099,15 +1099,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2687138455064333859, guid: 74e8e1c76d258bc4c9f071738ea495aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.65
+      value: -6.948573
       objectReference: {fileID: 0}
     - target: {fileID: 2687138455064333859, guid: 74e8e1c76d258bc4c9f071738ea495aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.28
+      value: 6.339999
       objectReference: {fileID: 0}
     - target: {fileID: 2687138455064333859, guid: 74e8e1c76d258bc4c9f071738ea495aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 47.32
+      value: 37.608074
       objectReference: {fileID: 0}
     - target: {fileID: 2687138455064333859, guid: 74e8e1c76d258bc4c9f071738ea495aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1156,15 +1156,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dac09a7fdd7eeb84aa754daecd9c11a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8714269
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dac09a7fdd7eeb84aa754daecd9c11a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000009168673
+      value: 13.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dac09a7fdd7eeb84aa754daecd9c11a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4480743
+      value: -10.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dac09a7fdd7eeb84aa754daecd9c11a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1635,7 +1635,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gamesitoriko
+          m_StringArgument: Map
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 366136860}
