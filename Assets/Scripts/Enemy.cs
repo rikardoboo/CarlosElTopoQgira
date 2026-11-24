@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
     protected Animator characterAnimator;
     [SerializeField]
     private GameObject hitParticles;
-
     public GameObject HitParticles => hitParticles;
 
     private Collider enemyCollider;
@@ -23,8 +22,9 @@ public class Enemy : MonoBehaviour
         enemyCollider.enabled = true;
     }
 
-    public void Die()
+    public virtual void Die()
     {
+        StopAllCoroutines();
         isAlive = false;
         enemyCollider.enabled = false;
     }

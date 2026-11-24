@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
@@ -7,6 +8,8 @@ public class InputController : MonoBehaviour
 
     public bool Roll { get; private set; }
 
+    public bool Pause { get; private set; }
+
     private bool isActive = true;
     public bool IsActive { set => isActive = value; }
 
@@ -15,8 +18,9 @@ public class InputController : MonoBehaviour
     {
         if (!isActive) return;
         Movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        Jump = Input.GetKeyDown(KeyCode.Space);
-        Roll = Input.GetKeyDown(KeyCode.R);
+        Jump = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0);
+        Roll = Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.JoystickButton2);
+        Pause = Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7);
 
     }
 }

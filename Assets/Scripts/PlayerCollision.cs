@@ -58,20 +58,25 @@ public class PlayerCollision : MonoBehaviour
             }
             
         }
+        else if (other.CompareTag("Bullet"))
+        {
+         if (invincibility.IsGhost) return;
+            onPlayerLose?.Invoke();
+        }
         else if (other.CompareTag("Box"))
         {
-            if (other.TryGetComponent (out Box box))
+            if (other.TryGetComponent(out Box box))
             {
                 if (rollController.IsRolling || invincibility.IsInvincible)
                 {
                     box.Break();
                 }
-              
+
             }
         }
         else if (other.CompareTag("Checkpoint"))
         {
-            if(other.TryGetComponent(out Item item))
+            if (other.TryGetComponent(out Item item))
             {
                 onCheckpointCollected?.Invoke(item.transform);
                 item.Collect();
