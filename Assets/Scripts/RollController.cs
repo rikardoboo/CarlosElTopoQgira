@@ -4,14 +4,10 @@ using System.Collections;
 
 public class RollController : MonoBehaviour
 {
+    
     [SerializeField]
-    private InputController inputController;
-    [SerializeField]
-
     private UnityEvent onRoll;
     [SerializeField]
-
-    
     private float cooldown = 0.5f;
     [SerializeField]
     private Collider rollCollider;
@@ -34,12 +30,11 @@ public class RollController : MonoBehaviour
         rollCollider.enabled = false;
         canRoll = true;
     }
-    private void Update()
+    public void TryRoll()
     {
-        if (canRoll &&!isRolling && inputController.Roll)
+        if (canRoll && !isRolling)
         {
             Roll();
-
         }
     }
     private void Roll()

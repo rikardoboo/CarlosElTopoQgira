@@ -12,15 +12,15 @@ public class MapController : MonoBehaviour
     {
         onMapStart?.Invoke();
     }
-    public void MovePlayer(MapDirection direction)
+    public void MovePlayer(MoveDirection direction)
     {
         if (mapPlayerController.CurrentLevel == null || !mapPlayerController.CanWalk) return;
         CheckLevel(mapPlayerController.CurrentLevel.NextLevel, direction);
         CheckLevel(mapPlayerController.CurrentLevel.PreviousLevel, direction);
     }
-    private void CheckLevel(MapLevelData level, MapDirection direction)
+    private void CheckLevel(MapLevelData level, MoveDirection direction)
     {
-        if (level == null) return;
+        if (level == null || !level.enabled || level.level == null) return;
         if (level.direction == direction)
         {
             mapPlayerController.MoveToLevel(level.level);

@@ -3,8 +3,7 @@ using UnityEngine.Events;
 
 public class JumpController : MonoBehaviour
 {
-    [SerializeField]
-    private InputController inputController;
+
 
     [SerializeField]
 
@@ -51,10 +50,7 @@ public class JumpController : MonoBehaviour
                 verticalVelocity = -2f;
 
             }
-            if (inputController.Jump)
-            {
-                Jump();
-            }
+           
         }
         else
         {
@@ -62,6 +58,13 @@ public class JumpController : MonoBehaviour
             {
                 verticalVelocity += gravity * Time.deltaTime;
             }
+        }
+    }
+    public void TryJump()
+    {
+        if (characterController.isGrounded)
+        {
+            Jump();
         }
     }
     public void Jump()
